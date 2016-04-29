@@ -1,3 +1,13 @@
+v0.1.6
+  * Break compatibility (100%)
+  * Improve architecture
+    * Rfc5322 designed as it
+    * Rfc5322 and Rfc5322::Public are now Classes (instead of modules)
+    * Core is now an Abstract, completed by adding the REGEXP constant in it's
+      children
+  * Update unitary tests
+  * Add some documentation
+
 v0.1.5
   * Split into files each feature (core, public, f/string)
 

@@ -9,9 +9,10 @@ Gem::Specification.new do |s|
   s.files       = %w(
 lib/ruby_email.rb
 lib/ruby_email/core.rb
-lib/ruby_email/core/string.rb
-lib/ruby_email/public.rb
-lib/ruby_email/public/string.rb
+lib/ruby_email/rfc5322.rb
+lib/ruby_email/rfc5322/string.rb
+lib/ruby_email/rfc5322/public.rb
+lib/ruby_email/rfc5322/public/string.rb
 
 README.md
 CHANGELOG

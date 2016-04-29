@@ -7,38 +7,38 @@ require_relative '../lib/ruby_email'
 class TestRubyEmail < Test::Unit::TestCase
 
   def test_simple_true
-    assert RubyEmail.validates?("toto@toto")
-    assert RubyEmail.validates?("toto@toto.toto")
-    assert RubyEmail.validates?("toto@toto.toto.toto")
-    assert RubyEmail.validates?("toto@toto.toto.toto.toto")
+    assert RubyEmail::Rfc5322.validates?("toto@toto")
+    assert RubyEmail::Rfc5322.validates?("toto@toto.toto")
+    assert RubyEmail::Rfc5322.validates?("toto@toto.toto.toto")
+    assert RubyEmail::Rfc5322.validates?("toto@toto.toto.toto.toto")
   end
 
   def test_simple_false
-    assert !RubyEmail.validates?("t")
-    assert !RubyEmail.validates?("t@")
-    assert !RubyEmail.validates?("@t")
+    assert !RubyEmail::Rfc5322.validates?("t")
+    assert !RubyEmail::Rfc5322.validates?("t@")
+    assert !RubyEmail::Rfc5322.validates?("@t")
   end
 
   def test_plus_true
-    assert RubyEmail.validates?("i'am%toto@here")
-    assert RubyEmail.validates?("ich-bin-toto@___")
-    assert RubyEmail.validates?("arthur+spam@mail.com")
+    assert RubyEmail::Rfc5322.validates?("i'am%toto@here")
+    assert RubyEmail::Rfc5322.validates?("ich-bin-toto@___")
+    assert RubyEmail::Rfc5322.validates?("arthur+spam@mail.com")
   end
 
   def test_plus_false
-    assert !RubyEmail.validates?("i have @ some things")
-    assert !RubyEmail.validates?("toto;toto@toto;toto")
-    assert !RubyEmail.validates?("toto,toto@toto,toto")
-    assert !RubyEmail.validates?("toto()toto@toto()toto")
-    assert !RubyEmail.validates?("toto[]toto@toto[]toto")
-    assert !RubyEmail.validates?("toto:toto@toto:toto")
-    assert !RubyEmail.validates?("toto<>toto@toto<>toto")
-    assert !RubyEmail.validates?("toto\\toto@toto\\toto")
-    assert !RubyEmail.validates?("toto\"toto@toto\"toto")
+    assert !RubyEmail::Rfc5322.validates?("i have @ some things")
+    assert !RubyEmail::Rfc5322.validates?("toto;toto@toto;toto")
+    assert !RubyEmail::Rfc5322.validates?("toto,toto@toto,toto")
+    assert !RubyEmail::Rfc5322.validates?("toto()toto@toto()toto")
+    assert !RubyEmail::Rfc5322.validates?("toto[]toto@toto[]toto")
+    assert !RubyEmail::Rfc5322.validates?("toto:toto@toto:toto")
+    assert !RubyEmail::Rfc5322.validates?("toto<>toto@toto<>toto")
+    assert !RubyEmail::Rfc5322.validates?("toto\\toto@toto\\toto")
+    assert !RubyEmail::Rfc5322.validates?("toto\"toto@toto\"toto")
   end
 
   def test_match
-    m = RubyEmail.match "toto@toto.toto.toto.toto"
+    m = RubyEmail::Rfc5322.match "toto@toto.toto.toto.toto"
     assert m.names & %w(local domain)
     assert_equal "toto", m["local"]
     assert_equal "toto.toto.toto.toto", m["domain"]
@@ -50,22 +50,22 @@ class TestRubyEmail < Test::Unit::TestCase
   end
 
   def test_exceptions
-    assert_raise { RubyEmail.match 1 }
-    assert_raise { RubyEmail.validates? 1.0 }
-    assert_raise { RubyEmail.validates? /toto/ }
-    assert_raise { RubyEmail.validates? :ok }
-    assert_raise { RubyEmail.validates? Class }
+    assert_raise { RubyEmail::Rfc5322.match 1 }
+    assert_raise { RubyEmail::Rfc5322.validates? 1.0 }
+    assert_raise { RubyEmail::Rfc5322.validates? /toto/ }
+    assert_raise { RubyEmail::Rfc5322.validates? :ok }
+    assert_raise { RubyEmail::Rfc5322.validates? Class }
   end
 
 end
 
 class TestRubyEmailPublic < Test::Unit::TestCase
   def test_simpe
-    assert RubyEmail::Public.validates?("toto@toto.toto")
-    assert RubyEmail::Public.validates?("toto@toto.toto.toto")
-    assert RubyEmail::Public.validates?("toto@toto.toto.toto.toto")
-    assert !RubyEmail::Public.validates?("toto@toto")
-    assert RubyEmail::Public.match("toto@toto.toto")
+    assert RubyEmail::Rfc5322::Public.validates?("toto@toto.toto")
+    assert RubyEmail::Rfc5322::Public.validates?("toto@toto.toto.toto")
+    assert RubyEmail::Rfc5322::Public.validates?("toto@toto.toto.toto.toto")
+    assert !RubyEmail::Rfc5322::Public.validates?("toto@toto")
+    assert RubyEmail::Rfc5322::Public.match("toto@toto.toto")
     assert "toto@toto.toto".is_public_email?
     assert !"toto@toto".is_public_email?
   end
