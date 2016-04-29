@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'ruby-email'
+  s.name        = 'ruby_email'
   s.version     = File.read("version")
   s.date        = Time.now.getgm.to_s.split.first
   s.summary     = File.read("CHANGELOG").match(/^v[^\n]+\n((\t[^\n]+\n)+)/m)[1].split("\t").join
@@ -15,7 +15,7 @@ CHANGELOG
 Rakefile
 Gemfile
 Gemfile.lock
-ruby-email.gemspec
+ruby_email.gemspec
 version
 
 test/unit_test.rb
