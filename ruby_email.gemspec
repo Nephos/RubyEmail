@@ -28,6 +28,8 @@ ruby_email.gemspec
 version
 
 test/unit_test.rb
+test/rfc1123.rb
+test/rfc5322.rb
 )
   s.executables = %w(
 )
