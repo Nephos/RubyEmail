@@ -1,3 +1,6 @@
+v0.1.5
+  * Split into files each feature (core, public, f/string)
+
 v0.1.4
   * Add public features (to check if the email is valid on the internet)
 

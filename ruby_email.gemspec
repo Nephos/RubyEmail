@@ -8,6 +8,10 @@ Gem::Specification.new do |s|
   s.email       = ['arthur.poulet@mailoo.org']
   s.files       = %w(
 lib/ruby_email.rb
+lib/ruby_email/core.rb
+lib/ruby_email/core/string.rb
+lib/ruby_email/public.rb
+lib/ruby_email/public/string.rb
 
 README.md
 CHANGELOG
