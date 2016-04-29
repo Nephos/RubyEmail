@@ -21,8 +21,11 @@ class TestRubyEmail < Test::Unit::TestCase
 
   def test_plus_true
     assert RubyEmail::Rfc5322.validates?("i'am%toto@here")
-    assert RubyEmail::Rfc5322.validates?("ich-bin-toto@___")
+    assert RubyEmail::Rfc5322.validates?("ich-bin-toto@ta-ta")
     assert RubyEmail::Rfc5322.validates?("arthur+spam@mail.com")
+    assert RubyEmail::Rfc5322.validates?("arthur+spam@0mail.com")
+    assert RubyEmail::Rfc5322.validates?("arthur+spam@127.0.0.1")
+    assert RubyEmail::Rfc5322.validates?("arthur+spam@255.254.251.0")
   end
 
   def test_plus_false
@@ -35,6 +38,9 @@ class TestRubyEmail < Test::Unit::TestCase
     assert !RubyEmail::Rfc5322.validates?("toto<>toto@toto<>toto")
     assert !RubyEmail::Rfc5322.validates?("toto\\toto@toto\\toto")
     assert !RubyEmail::Rfc5322.validates?("toto\"toto@toto\"toto")
+    assert !RubyEmail::Rfc5322.validates?("arthur+spam@-root")
+    assert !RubyEmail::Rfc5322.validates?("arthur+spam@0.0.0.-1")
+    assert !RubyEmail::Rfc5322.validates?("arthur+spam@256.255.254.1")
   end
 
   def test_match

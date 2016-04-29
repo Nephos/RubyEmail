@@ -5,7 +5,8 @@ module RubyEmail
 
     # Internet realist version of {Rfc5322}. It requires a root domain.
     class Public < Rfc5322
-      VALIDE = "(?<local>#{DOT_ATOM_TEXT})@(?<domain>#{DOT_ATOM_TEXT}\\.#{DOT_ATOM_TEXT})"
+      DOMAIN_DOT_ATOM_TEXT = "(?=.{1,253})((#{DOMAIN_ATOM_ALL}\\.)+#{DOMAIN_ATOM_FIRST})"
+      VALIDE = "(?<local>#{LOCAL_DOT_ATOM_TEXT})@(?<domain>#{DOMAIN_DOT_ATOM_TEXT})"
       REGEXP = Regexp.new "\\A#{VALIDE}\\Z"
 
       module String
