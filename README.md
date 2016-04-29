@@ -31,8 +31,12 @@ RubyEmail::Rfc322::Public.validates? "toto@tata.com" # => true
 RubyEmail::Rfc322::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
 
 # Rfc5322 Strings
+require 'ruby_email/rfc5322/string'
 "local@domain".is_email? # => true
 "local".is_email? # => false
+
+# Rfc5322 Strings + Internet basic usage
+require 'ruby_email/rfc5322/public/string'
 "local@domain.root".is_public_email? # => true
 "local@domain".is_public_email? # => false
 

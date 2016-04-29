@@ -16,6 +16,13 @@ module RubyEmail
     VALIDE = "(?<local>#{DOT_ATOM_TEXT})@(?<domain>#{DOT_ATOM_TEXT})"
     # regexp to validate complete email
     REGEXP = Regexp.new "\\A#{VALIDE}\\Z"
+    module String
+      # Check if the current [::String] instance is a valid email
+      # @return [TrueClass or FalseClass]
+      def is_email?
+        RubyEmail::Rfc5322.validates? self
+      end
+    end
   end
 
 end
