@@ -13,6 +13,10 @@ lib/ruby_email/rfc5322.rb
 lib/ruby_email/rfc5322/string.rb
 lib/ruby_email/rfc5322/public.rb
 lib/ruby_email/rfc5322/public/string.rb
+lib/ruby_email/rfc1123.rb
+lib/ruby_email/rfc1123/string.rb
+lib/ruby_email/rfc1123/public.rb
+lib/ruby_email/rfc1123/public/string.rb
 
 README.md
 CHANGELOG

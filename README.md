@@ -1,8 +1,11 @@
 # A RFC compliant Email validator
 
-What is an [email address](https://en.wikipedia.org/wiki/Email_address) ?
+- What is an [Email Address](https://en.wikipedia.org/wiki/Email_address) ?
+- What is a [Domain Name](https://en.wikipedia.org/wiki/Hostname) ?
 
-- Compliant to the [rfc 5322](https://tools.ietf.org/html/rfc5322) standard.
+- Compliant to the [Rfc 5322](https://tools.ietf.org/html/rfc5322).
+- Compliant to the [Rfc 1123](https://tools.ietf.org/html/rfc1123).
+
 - To do [rfc 6530](https://tools.ietf.org/html/rfc6530).
 
 

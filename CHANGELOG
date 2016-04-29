@@ -1,3 +1,6 @@
+v0.2.0
+  * Domain Name handled (Rfc1123)
+
 v0.1.6
   * Break compatibility (100%)
   * Improve architecture
