@@ -1,5 +1,3 @@
-require_relative 'core'
-
 # http://www.ietf.org/rfc/rfc5322.txt
 module RubyEmail
 
