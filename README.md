@@ -1,6 +1,6 @@
 # A RFC compliant Email validator
 
-Complient to the http://www.ietf.org/rfc/rfc5322.txt standard.
+Compliant to the http://www.ietf.org/rfc/rfc5322.txt standard.
 
 ## Usage
 
