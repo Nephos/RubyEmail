@@ -1,6 +1,10 @@
 # A RFC compliant Email validator
 
-Compliant to the [rfc 5322](http://www.ietf.org/rfc/rfc5322.txt) standard.
+What is an [email address](https://en.wikipedia.org/wiki/Email_address) ?
+
+- Compliant to the [rfc 5322](https://tools.ietf.org/html/rfc5322) standard.
+- To do [rfc 6530](https://tools.ietf.org/html/rfc6530).
+
 
 ## Installation
 
