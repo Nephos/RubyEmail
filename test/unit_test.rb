@@ -58,3 +58,15 @@ class TestRubyEmail < Test::Unit::TestCase
   end
 
 end
+
+class TestRubyEmailPublic < Test::Unit::TestCase
+  def test_simpe
+    assert RubyEmail::Public.validates?("toto@toto.toto")
+    assert RubyEmail::Public.validates?("toto@toto.toto.toto")
+    assert RubyEmail::Public.validates?("toto@toto.toto.toto.toto")
+    assert !RubyEmail::Public.validates?("toto@toto")
+    assert RubyEmail::Public.match("toto@toto.toto")
+    assert "toto@toto.toto".is_public_email?
+    assert !"toto@toto".is_public_email?
+  end
+end

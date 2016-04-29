@@ -26,6 +26,11 @@ RubyEmail.match "toto@tata" # => #<MatchData "toto@tata" local:"toto" domain:"ta
 "local".is_email? # => false
 RubyEmail.validates? "toto" # => false
 RubyEmail.match "toto" # => nil
+
+"local@domain.root".is_public_email? # => true
+"local@domain".is_public_email? # => false
+RubyEmail::Public.validates? "toto@tata.com" # => true
+RubyEmail::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
 ```
 
 
@@ -33,7 +38,8 @@ RubyEmail.match "toto" # => nil
 
 ```ruby
 class Model < ActiveRecord::Base
-  validates :email, format: RubyEmail::REGEXP
+  # validates :email, format: RubyEmail::REGEXP # valid on an intranet ...
+  validates :email, format: RubyEmail::Public::REGEXP
 end
 ```
 
