@@ -20,17 +20,22 @@ gem 'ruby_email'
 ```ruby
 require 'ruby_email'
 
-"local@domain".is_email? # => true
-RubyEmail.validates? "toto@tata" # => true
-RubyEmail.match "toto@tata" # => #<MatchData "toto@tata" local:"toto" domain:"tata">
-"local".is_email? # => false
-RubyEmail.validates? "toto" # => false
-RubyEmail.match "toto" # => nil
+# Pure Rfc5322
+RubyEmail::Rfc322.validates? "toto@tata" # => true
+RubyEmail::Rfc322.match "toto@tata" # => #<MatchData "toto@tata" local:"toto" domain:"tata">
+RubyEmail::Rfc322.validates? "toto" # => false
+RubyEmail::Rfc322.match "toto" # => nil
 
+# Rfc5322 + Internet basic usage
+RubyEmail::Rfc322::Public.validates? "toto@tata.com" # => true
+RubyEmail::Rfc322::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
+
+# Rfc5322 Strings
+"local@domain".is_email? # => true
+"local".is_email? # => false
 "local@domain.root".is_public_email? # => true
 "local@domain".is_public_email? # => false
-RubyEmail::Public.validates? "toto@tata.com" # => true
-RubyEmail::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
+
 ```
 
 
@@ -38,8 +43,8 @@ RubyEmail::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto
 
 ```ruby
 class Model < ActiveRecord::Base
-  # validates :email, format: RubyEmail::REGEXP # valid on an intranet ...
-  validates :email, format: RubyEmail::Public::REGEXP
+  # validates :email, format: RubyEmail::Rfc322::REGEXP # valid on an intranet ...
+  validates :email, format: RubyEmail::Rfc322::Public::REGEXP
 end
 ```
 
