@@ -7,32 +7,34 @@ Gem::Specification.new do |s|
   s.authors     = ['Nephos (poulet_a)']
   s.email       = ['arthur.poulet@mailoo.org']
   s.files       = %w(
-lib/ruby_email.rb
-lib/ruby_email/core.rb
-lib/ruby_email/rfc5322.rb
-lib/ruby_email/rfc5322/string.rb
-lib/ruby_email/rfc5322/public.rb
-lib/ruby_email/rfc5322/public/string.rb
-lib/ruby_email/rfc1123.rb
-lib/ruby_email/rfc1123/string.rb
-lib/ruby_email/rfc1123/public.rb
-lib/ruby_email/rfc1123/public/string.rb
+  lib/ruby_email.rb
+  lib/ruby_email/core.rb
+  lib/ruby_email/rfc5322.rb
+  lib/ruby_email/rfc5322/string.rb
+  lib/ruby_email/rfc5322/public.rb
+  lib/ruby_email/rfc5322/public/string.rb
+  lib/ruby_email/rfc1123.rb
+  lib/ruby_email/rfc1123/string.rb
+  lib/ruby_email/rfc1123/public.rb
+  lib/ruby_email/rfc1123/public/string.rb
 
-README.md
-CHANGELOG
+  README.md
+  CHANGELOG
 
-Rakefile
-Gemfile
-Gemfile.lock
-ruby_email.gemspec
-version
+  Rakefile
+  Gemfile
+  Gemfile.lock
+  ruby_email.gemspec
+  version
 
-test/unit_test.rb
-test/rfc1123.rb
-test/rfc5322.rb
-)
+  test/unit_test.rb
+  test/rfc1123.rb
+  test/rfc5322.rb
+
+  certs/nephos.pem
+  )
   s.executables = %w(
-)
+  )
   s.homepage    = 'https://github.com/Nephos/RubyEmail'
   s.license     = 'WTFPL'
 
