@@ -28,14 +28,14 @@ gem 'ruby_email'
 require 'ruby_email'
 
 # Pure Rfc5322
-RubyEmail::Rfc322.validates? "toto@tata" # => true
-RubyEmail::Rfc322.match "toto@tata" # => #<MatchData "toto@tata" local:"toto" domain:"tata">
-RubyEmail::Rfc322.validates? "toto" # => false
-RubyEmail::Rfc322.match "toto" # => nil
+RubyEmail::Rfc5322.validates? "toto@tata" # => true
+RubyEmail::Rfc5322.match "toto@tata" # => #<MatchData "toto@tata" local:"toto" domain:"tata">
+RubyEmail::Rfc5322.validates? "toto" # => false
+RubyEmail::Rfc5322.match "toto" # => nil
 
 # Rfc5322 + Internet basic usage
-RubyEmail::Rfc322::Public.validates? "toto@tata.com" # => true
-RubyEmail::Rfc322::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
+RubyEmail::Rfc5322::Public.validates? "toto@tata.com" # => true
+RubyEmail::Rfc5322::Public.match "toto@tata.com" # => #<MatchData "toto@tata" local:"toto" domain:"tata.com">
 
 # Rfc5322 Strings
 require 'ruby_email/rfc5322/string'
@@ -54,8 +54,8 @@ require 'ruby_email/rfc5322/public/string'
 
 ```ruby
 class Model < ActiveRecord::Base
-  # validates :email, format: RubyEmail::Rfc322::REGEXP # valid on an intranet ...
-  validates :email, format: RubyEmail::Rfc322::Public::REGEXP
+  # validates :email, format: RubyEmail::Rfc5322::REGEXP # valid on an intranet ...
+  validates :email, format: RubyEmail::Rfc5322::Public::REGEXP
 end
 ```
 
