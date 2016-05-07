@@ -31,6 +31,7 @@ module RubyEmail
         RubyEmail::Rfc5322.validates? self
       end
     end
+
   end
 
 end
