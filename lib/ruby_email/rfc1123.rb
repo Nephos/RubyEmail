@@ -19,10 +19,10 @@ module RubyEmail
     # a valid string with subdomains, separated by dots for domain part as IPV4
     IPV4 = '(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
     # a valid string with subdomains, separated by dots for domain part as Domain Name
-    DOT_ATOM_TEXT = "(?=.{1,253})((#{ATOM_ALL}\\.)*#{ATOM_FIRST})"
+    DOT_ATOM_TEXT = "((#{ATOM_ALL}\\.)*#{ATOM_FIRST})"
 
     # email grammar
-    VALIDE = "(?<domain>((#{DOT_ATOM_TEXT})|(#{IPV4})))"
+    VALIDE = "(?<domain>(?!.{254,})((#{DOT_ATOM_TEXT})|(#{IPV4})))"
 
     # regexp to validate complete email
     REGEXP = Regexp.new "\\A#{VALIDE}\\Z"
