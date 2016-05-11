@@ -12,9 +12,9 @@ module RubyEmail
     ATEXT_ALL = '([A-Za-z0-9\-])'
 
     # a valid string for domain part (first name)
-    ATOM_FIRST = "#{ATEXT_FIRST_FIRST}#{ATEXT_ALL}{,62}"
+    ATOM_FIRST = "#{ATEXT_FIRST_FIRST}#{ATEXT_ALL}{0,62}"
     # a valid string for domain part (all other names)
-    ATOM_ALL = "#{ATEXT_FIRST_ALL}#{ATEXT_ALL}{,62}"
+    ATOM_ALL = "#{ATEXT_FIRST_ALL}#{ATEXT_ALL}{0,62}"
 
     # a valid string with subdomains, separated by dots for domain part as IPV4
     IPV4 = '(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
