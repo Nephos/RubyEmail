@@ -22,8 +22,9 @@ class TestRubyEmailRfc1123 < Test::Unit::TestCase
     assert RubyEmail::Rfc1123.validates?("127.0.0.1")
     assert RubyEmail::Rfc1123.validates?("255.254.251.0")
     assert RubyEmail::Rfc1123.validates?("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    assert RubyEmail::Rfc1123.validates?("a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a")
-    assert RubyEmail::Rfc1123.validates?("a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa")
+    assert RubyEmail::Rfc1123.validates?("a" * 63)
+    assert RubyEmail::Rfc1123.validates?("a" * 63 + ".a")
+    assert RubyEmail::Rfc1123.validates?("aaa" + ".a"*125)
   end
 
   def test_plus_false
@@ -44,8 +45,8 @@ class TestRubyEmailRfc1123 < Test::Unit::TestCase
     assert !RubyEmail::Rfc1123.validates?("111")
     assert !RubyEmail::Rfc1123.validates?("a.1")
     assert !RubyEmail::Rfc1123.validates?("1.1")
-    assert !RubyEmail::Rfc1123.validates?("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    assert !RubyEmail::Rfc1123.validates?("a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aa.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.aaa")
+    assert !RubyEmail::Rfc1123.validates?("a" * 64)
+    assert !RubyEmail::Rfc1123.validates?("aaaa" + ".a"*125)
   end
 
   def test_match
