@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'nomorebeer' # action against drunk driving
+gem 'nomorebeer', '~> 1', '>= 1.1.1' # action against drunk driving
 
