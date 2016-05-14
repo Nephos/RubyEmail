@@ -1,3 +1,6 @@
+v0.2.3
+    * Fix bug on Rfc1123::Public
+
 v0.2.2.2
     * Update deps / license
 

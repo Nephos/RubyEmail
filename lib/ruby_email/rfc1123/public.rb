@@ -5,8 +5,8 @@ module RubyEmail
 
     # Internet realist version of {Rfc5322}. It requires 2 names (a.b).
     class Public < Rfc1123
-      DOT_ATOM_TEXT = "(?=.{1,253})((#{ATOM_ALL}\\.)+#{ATOM_FIRST})"
-      VALIDE = "(?<domain>#{DOT_ATOM_TEXT})"
+      DOT_ATOM_TEXT = "((#{ATOM_ALL}\\.)+#{ATOM_FIRST})"
+      VALIDE = "(?<domain>(?!.{254,})((#{DOT_ATOM_TEXT})))"
       REGEXP = Regexp.new "\\A#{VALIDE}\\Z"
 
       module String
