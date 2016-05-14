@@ -41,7 +41,6 @@ Gem::Specification.new do |s|
   s.cert_chain  = ['certs/nephos.pem']
   s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $0 =~ /gem\z/
 
-  # s.add_dependency 'nephos', '~> 1.0'
-  s.add_dependency 'nomorebeer', '~> 1.1'
+  s.add_dependency 'nomorebeer', '~> 1', '>= 1.1.1'
 
 end
