@@ -74,4 +74,4 @@ rake test
 Find a bug ? Want a new feature ?
 Create a clear pull request and we'll see :)
 
-- Nephos (poulet_a)
+- [Sceptique](https://git.sceptique.eu/Sceptique)
