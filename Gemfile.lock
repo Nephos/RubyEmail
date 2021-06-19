@@ -1,19 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    nomorebeer (1.1.1)
-    power_assert (0.2.6)
-    rake (11.1.2)
-    test-unit (3.1.5)
+    power_assert (2.0.0)
+    rake (13.0.3)
+    test-unit (3.4.4)
       power_assert
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  nomorebeer (~> 1, >= 1.1.1)
   rake
   test-unit
 
 BUNDLED WITH
-   1.11.2
+   2.2.3
