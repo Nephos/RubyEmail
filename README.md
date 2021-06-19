@@ -1,4 +1,6 @@
-# A RFC compliant Email validator
+# A RFC compliant Email validator
+
+[![Build Status](https://drone.sceptique.eu/api/badges/Sceptique/RubyEmail/status.svg)](https://drone.sceptique.eu/Sceptique/RubyEmail)
 
 - What is an [Email Address](https://en.wikipedia.org/wiki/Email_address) ?
 - What is a [Domain Name](https://en.wikipedia.org/wiki/Hostname) ?
@@ -22,7 +24,7 @@ gem 'ruby_email'
 ```
 
 
-## Usage in Ruby
+## Usage in Ruby
 
 ```ruby
 require 'ruby_email'

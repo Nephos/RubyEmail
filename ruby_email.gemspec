@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
 
   README.md
   CHANGELOG
+  LICENSE
 
   Rakefile
   Gemfile
@@ -36,7 +37,7 @@ Gem::Specification.new do |s|
   s.executables = %w(
   )
   s.homepage    = 'https://github.com/Nephos/RubyEmail'
-  s.license     = 'WTFPL'
+  s.license     = 'GPL-3.0'
 
   s.cert_chain  = ['certs/nephos.pem']
   s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $0 =~ /gem\z/

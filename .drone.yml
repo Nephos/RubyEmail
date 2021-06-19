@@ -1,0 +1,9 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: ruby:3.0
+  commands:
+  - bundle install --jobs=1 --retry=1
+  - rake test
